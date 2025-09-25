@@ -17,6 +17,10 @@ class Fruta:
         return f"\n{self.nome} \nCor: {self.cor} \nSabor: {self.sabor} \nPeso: {self.peso}g"
     
 fruta1 = Fruta("Maçã", "Vermelha", "doce", 150)
+fruta2 = Fruta("Limão", "Verde", "azedo", 80)
 
 print(fruta1)
 print(fruta1.comer())
+print(fruta2)
+print(fruta2.descascar())
+print(fruta2.comer())

@@ -92,3 +92,60 @@ class Banco:
         for acao in self.relatorio_credito:
             print(acao)
         print("-----------------------")
+
+cliente = Banco("12345-6", "Lucas", 2500.00, "Santander", "0012")
+
+while True:
+    print(f"\n{cliente}")
+    print("\n---Menu Principal---")
+    print("1 - Sacar")
+    print("2 - TED")
+    print("3 - PIX")
+    print("4 - Cheque Especial")
+    print("5 - Empréstimo")
+    print("6 - Crédito (compra)")
+    print("7 - Fechar Fatura de Crédito")
+    print("8 - Relatório de Crédito")
+    print("0 - Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        valor = float(input("\nDigite o valor do saque: "))
+        cliente.sacar(valor)
+
+    elif opcao == "2":
+        valor = float(input("\nDigite o valor do TED: "))
+        banco_destino = input("Digite o nome do banco destino: ")
+        cliente.TED(valor, banco_destino)
+
+    elif opcao == "3":
+        valor = float(input("\nDigite o valor do PIX: "))
+        cliente.pix(valor)
+
+    elif opcao == "4":
+        valor = float(input("\nDigite o valor do Cheque especial: "))
+        cliente.cheque_especial(valor)
+
+    elif opcao == "5":
+        valor = float(input("\nDigite o valor do empréstimo: "))
+        finalidade = input("Finalidade do empréstimo: ")
+        cliente.emprestimo(valor, finalidade)
+
+    elif opcao == "6":
+        valor = float(input("\nDigite o valor da compra no crédito: "))
+        produto = input("Nome do produto: ")
+        cliente.credito(valor, produto)
+
+    elif opcao == "7":
+        cliente.fechar_fatura_credito()
+
+    elif opcao == "8":
+        cliente.relatorio_de_credito()
+
+    elif opcao == "0":
+        print("\nEncerrando o sistema. Até logo!")
+        break
+
+    else:
+        print("\nOpção inválida! Tente novamente.")

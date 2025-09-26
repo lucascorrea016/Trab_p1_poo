@@ -142,7 +142,7 @@ while True:
         cliente.fechar_fatura_credito()
 
     elif opcao == "8":
-        cliente.relatorio_credito()
+        cliente.relatorio_de_credito()
 
     elif opcao == "0":
         print("\nEncerrando o sistema. Até logo!")

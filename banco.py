@@ -14,7 +14,7 @@ class Banco:
         self.numero = numero
         self.nome = nome
         self.saldo = saldo
-        self.banco = banco
+        self.banco = banco.upper()
         self.agencia = agencia
         self.credito_pendente = []
         self.relatorio_credito = []
@@ -32,6 +32,7 @@ class Banco:
             print("Saldo insuficiente para saque!")
 
     def TED(self, valor: float, banco_destino: str):
+        banco_destino = banco_destino.upper()
 
         if valor <= self.saldo:
             taxa = 0
@@ -141,7 +142,7 @@ while True:
         cliente.fechar_fatura_credito()
 
     elif opcao == "8":
-        cliente.relatorio_de_credito()
+        cliente.relatorio_credito()
 
     elif opcao == "0":
         print("\nEncerrando o sistema. Até logo!")
